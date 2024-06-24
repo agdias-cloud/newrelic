@@ -1,0 +1,101 @@
+ devices:
+        VMJTB01__10.1.85.3:
+            device_name: VMJTB01
+            device_ip: 10.1.85.3
+            snmp_comm: getjmg
+            use_snmp_v1: false
+            debug: false
+            port: 161
+            oid: .1.3.6.1.4.1.6876.4.1
+            description: VMware ESXi 8.0.1 build-21495797 VMware, Inc. x86_64
+            last_checked: 2024-06-21T20:13:00.551075297Z
+            mib_profile: esx.yml
+            provider: kentik-esx
+            user_tags:
+                container_service: coletor01
+            discovered_mibs:
+                - HOST-RESOURCES-MIB
+                - IF-MIB
+                - VMWARE-ENV-MIB
+                - VMWARE-RESOURCES-MIB
+            match_attributes: {}
+            monitor_admin_shut: false
+            no_use_bulkwalkall: false
+            purge_after_num: 0
+        idrac-32DQJ82-611179__10.1.85.6:
+            device_name: idrac-32DQJ82-611179
+            device_ip: 10.1.85.6
+            snmp_comm: public
+            use_snmp_v1: false
+            debug: false
+            port: 161
+            oid: .1.3.6.1.4.1.674.10892.5
+            description: ""
+            last_checked: 2024-06-21T20:13:00.602141243Z
+            mib_profile: dell-idrac.yml
+            provider: kentik-idrac
+            user_tags:
+                container_service: coletor01
+            discovered_mibs:
+                - DELL-RAC-MIB
+                - IDRAC-MIB
+            engine_id: 80:00:1f:88:80:55:38:20:18:72:e2:33:56
+            match_attributes: {}
+            monitor_admin_shut: false
+            no_use_bulkwalkall: false
+            purge_after_num: 0
+    trap:
+        listen: 0.0.0.0:1620
+        community: ""
+        version: ""
+        transport: ""
+        v3_config: null
+        trap_only: false
+        drop_undefined: false
+        endpoint: ""
+        endpoint_port: 0
+    discovery:
+        cidrs:
+            - 10.1.85.3/32
+            - 10.1.85.6/32
+        ignore_list: []
+        debug: false
+        ports:
+            - 161
+        default_communities:
+            - public
+            - tjmg21ebt
+            - getjmg
+        use_snmp_v1: false
+        default_v3: null
+        add_devices: true
+        add_mibs: true
+        threads: 4
+        replace_devices: true
+        no_dedup_engine_id: true
+        check_all_ips: true
+        kentik: null
+    global:
+        poll_time_sec: 60
+        drop_if_outside_poll: false
+        mib_profile_dir: /etc/ktranslate/profiles
+        mibs_db: ""
+        mibs_enabled:
+            - DELL-RAC-MIB
+            - HOST-RESOURCES-MIB
+            - IDRAC-MIB
+            - IF-MIB
+            - VMWARE-ENV-MIB
+            - VMWARE-RESOURCES-MIB
+        timeout_ms: 3000
+        retries: 1
+        global_v3: null
+        response_time: false
+        purge_devices_after_num: 0
+        no_device_hardcoded_oids: false
+        user_tags: {}
+        match_attributes: {}
+        providers: {}
+        jitter_time_sec: 0
+        fast_poll: false
+        watch_profile_changes: false
