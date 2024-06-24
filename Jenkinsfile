@@ -51,7 +51,7 @@ spec:
     stage('tag image') {
       steps {
         container('buildah') {
-          sh 'buildah tag devops-automation:v0  agdiascloud/custom-ktranslate:v0'
+          sh 'buildah tag custom-ktranslate:v0  agdiascloud/custom-ktranslate:v0'
         
         }
       }
